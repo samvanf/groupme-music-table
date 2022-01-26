@@ -3,17 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { TableComponent } from './table/table.component';
-import {MatTableModule} from '@angular/material/table'; 
+import {MatTableModule} from '@angular/material/table';
+import { AngularMaterialModule } from './angular-material.module';
 @NgModule({
   declarations: [
-    AppComponent,
-    TableComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    NoopAnimationsModule,
-    MatTableModule
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
