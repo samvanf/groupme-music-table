@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { AngularMaterialModule } from './angular-material.module';
+import { PostModule } from './post/post.module';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    PostModule
   ],
   providers: [],
   bootstrap: [AppComponent]
