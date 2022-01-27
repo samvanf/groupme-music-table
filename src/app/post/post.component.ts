@@ -7,7 +7,8 @@ export interface SongEntry {
   }
   
   const SONG_DATA: SongEntry[] = [
-    {name: 'Alex Tottser', text: 'Great song for a cozy morning or night \n https://open.spotify.com/track/0EjtZmOLT6WLShJRHCFWVU?si=S8QpzxazSgC53mGtRcKiKA&utm_source=copy-link'}
+    {name: 'Alex Tottser', text: 'Great song for a cozy morning or night \n https://open.spotify.com/track/0EjtZmOLT6WLShJRHCFWVU?si=S8QpzxazSgC53mGtRcKiKA&utm_source=copy-link'},
+    {name: 'Zach Dobos', text: ' start https://open.spotify.com/track/0EjtZmOLT6WLShJRHCFWVU?si=S8QpzxazSgC53mGtRcKiKA&utm_source=copy-link end'}
   ];
 
   
@@ -19,7 +20,7 @@ export interface SongEntry {
 })
 export class PostComponent {
 
-    displayedColumns: string[] = ['sender name', 'song title'];
+    displayedColumns: string[] = ['name', 'text'];
     dataSource = SONG_DATA;
     
 }
