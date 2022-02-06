@@ -3,6 +3,13 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Methods','GET');
+    next();
+});
+
 
 app.get("/api/posts", (req, res) => {
     axios.get(`https://api.groupme.com/v3/groups/${process.env.MUSIC_GROUP_ID}/messages?token=${process.env.GROUPME_TOKEN}`)
