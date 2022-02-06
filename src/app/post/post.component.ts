@@ -18,9 +18,17 @@ export interface SongEntry {
     templateUrl: './post.component.html',
     styleUrls: ['./post.component.css']
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
 
     displayedColumns: string[] = ['name', 'text'];
     dataSource = SONG_DATA;
+
+    constructor(public postService: PostService) {
+      this.postService = postService;
+    }
+
+    ngOnInit(): void {
+        this.postService.getPosts();
+    }
     
 }

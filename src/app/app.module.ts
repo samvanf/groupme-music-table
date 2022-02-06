@@ -6,6 +6,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { AngularMaterialModule } from './angular-material.module';
 import { PostModule } from './post/post.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +14,8 @@ import { PostModule } from './post/post.module';
   imports: [
     BrowserModule,
     AngularMaterialModule,
-    PostModule
+    PostModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
