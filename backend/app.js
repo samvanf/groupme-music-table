@@ -14,8 +14,17 @@ app.use((req, res, next) => {
 app.get("/api/posts", (req, res) => {
     axios.get(`https://api.groupme.com/v3/groups/${process.env.MUSIC_GROUP_ID}/messages?token=${process.env.GROUPME_TOKEN}`)
         .then(result => {
+            const messagesOrig = result.data.response.messages;
+            const newMessageData = messagesOrig.map((message) => {
+                return {
+                    created_at: message.created_at,
+                    name: message.name,
+                    text: message.text,
+                    source_guid: message.source_guid
+                }
+            });
             res.status(200).json({
-                messages: result.data.response.messages
+                messages: newMessageData
             });
         })
         .catch(err => {

@@ -3,9 +3,21 @@
         <th mat-header-cell *matHeaderCellDef>Post Author</th>
         <td mat-cell *matCellDef="let post"> {{post.name}}</td>
     </ng-container>
+    <ng-container matColumnDef="song link">
+        <th mat-header-cell *matHeaderCellDef>Song Link</th>
+        <td mat-cell *matCellDef="let post"> {{post.song_link}}</td>
+    </ng-container>
+    <ng-container matColumnDef="created at">
+        <th mat-header-cell *matHeaderCellDef>Created At</th>
+        <td mat-cell *matCellDef="let post"> {{post.created_at | date:'short'}}</td>
+    </ng-container>
     <ng-container matColumnDef="text">
         <th mat-header-cell *matHeaderCellDef>Post Text</th>
-        <td mat-cell *matCellDef="let post"> {{post.text}}</td>
+        <td mat-cell *matCellDef="let post">{{post.text}}</td>
+    </ng-container>
+    <ng-container matColumnDef="misc">
+        <th mat-header-cell *matHeaderCellDef>Also...</th>
+        <td mat-cell *matCellDef="let post">{{post.source_guid}}</td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let myRowData; columns: displayedColumns"></tr>
